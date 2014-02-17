@@ -93,6 +93,13 @@ void my_mouse_callback(int event,int x, int y, int flags, void* param)
 					cvCircle(image, cvPoint(pt[0][2].x ,pt[0][2].y), 40/5, CV_RGB(250, 0, 0), 2, 8, 0 );
 				else if((multi_box[1][1] != 0) && (pt[0][3].x - POINT_RANGE <= x ) && (x <= pt[0][3].x + POINT_RANGE) && (pt[0][3].y - POINT_RANGE <= y) && (y <= pt[0][3].y + POINT_RANGE))
 					cvCircle(image, cvPoint(pt[0][3].x ,pt[0][3].y), 40/5, CV_RGB(250, 0, 0), 2, 8, 0 );
+				else if((multi_box[1][1] != 0))
+				{
+					cvCircle(image, cvPoint(pt[0][0].x ,pt[0][0].y), 3, CV_RGB(0, 0, 255), 2, 8, 0 );
+					cvCircle(image, cvPoint(pt[0][1].x ,pt[0][1].y), 3, CV_RGB(0, 0, 255), 2, 8, 0 );
+					cvCircle(image, cvPoint(pt[0][2].x ,pt[0][2].y), 3, CV_RGB(0, 0, 255), 2, 8, 0 );
+					cvCircle(image, cvPoint(pt[0][3].x ,pt[0][3].y), 3, CV_RGB(0, 0, 255), 2, 8, 0 );
+				}
 			}
 		}
 		break;
